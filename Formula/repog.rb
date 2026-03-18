@@ -11,7 +11,7 @@ class Repog < Formula
 
   if Hardware::CPU.intel?
     url "https://github.com/hackastak/repog/releases/download/v0.1.0/repog_0.1.0_darwin_amd64.tar.gz"
-    sha256 "820bee706d6c6e4032348a6f08959aaee21edc0ec8760c3d8c8b9815e1767d47"
+    sha256 "967eb2115db7e282d31ed791f0c385db2ce3b4c812c5d0a6d290e35532b6726b"
 
     define_method(:install) do
       bin.install "repog"
@@ -19,7 +19,7 @@ class Repog < Formula
   end
   if Hardware::CPU.arm?
     url "https://github.com/hackastak/repog/releases/download/v0.1.0/repog_0.1.0_darwin_arm64.tar.gz"
-    sha256 "e8333fe097c3326f524723b04fa1405610e8e3345d29a1b0fdc4e9d67429d1fa"
+    sha256 "d38a625724150ffa55ecc4c24cd72e88d955ffc39c15e1b0da9e03ac12ee4c87"
 
     define_method(:install) do
       bin.install "repog"
