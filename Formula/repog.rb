@@ -5,20 +5,22 @@
 class Repog < Formula
   desc "AI-powered knowledge base for your GitHub repositories"
   homepage "https://github.com/hackastak/repog"
-  version "0.2.0"
+  version "0.2.1"
   license "MIT"
-  depends_on :linux
+  depends_on :macos
 
-  if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-    url "https://github.com/hackastak/repog/releases/download/v0.2.0/repog_0.2.0_linux_amd64.tar.gz"
-    sha256 "53618967cbdb53333c853f6f0edb5bde92ed0c01581df477514b0361e59b8047"
+  if Hardware::CPU.intel?
+    url "https://github.com/hackastak/repog/releases/download/v0.2.1/repog_0.2.1_darwin_amd64.tar.gz"
+    sha256 "8c7209fc6977eab032e02a60dddaf33e0feb81bf833b3680405e7715805440e1"
+
     define_method(:install) do
       bin.install "repog"
     end
   end
-  if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/hackastak/repog/releases/download/v0.2.0/repog_0.2.0_linux_arm64.tar.gz"
-    sha256 "b3be28e6dcdfe2254f78d3d6fbdc56df279c6f99ba09813d5db125cfbf0de24e"
+  if Hardware::CPU.arm?
+    url "https://github.com/hackastak/repog/releases/download/v0.2.1/repog_0.2.1_darwin_arm64.tar.gz"
+    sha256 "4bd7c626fa9fd229674c92405781782482fbbbbb256b183b1ecd6f002771d937"
+
     define_method(:install) do
       bin.install "repog"
     end
