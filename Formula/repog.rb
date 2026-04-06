@@ -7,20 +7,18 @@ class Repog < Formula
   homepage "https://github.com/hackastak/repog"
   version "0.2.0"
   license "MIT"
-  depends_on :macos
+  depends_on :linux
 
-  if Hardware::CPU.intel?
-    url "https://github.com/hackastak/repog/releases/download/v0.2.0/repog_0.2.0_darwin_amd64.tar.gz"
-    sha256 "c5eedbab0a46ef3dd7a0758d2e7a2a44386e7ecf543de62831ba6f601ba37bca"
-
+  if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+    url "https://github.com/hackastak/repog/releases/download/v0.2.0/repog_0.2.0_linux_amd64.tar.gz"
+    sha256 "53618967cbdb53333c853f6f0edb5bde92ed0c01581df477514b0361e59b8047"
     define_method(:install) do
       bin.install "repog"
     end
   end
-  if Hardware::CPU.arm?
-    url "https://github.com/hackastak/repog/releases/download/v0.2.0/repog_0.2.0_darwin_arm64.tar.gz"
-    sha256 "66772d330c35a833c54ffd1a520bc2cc6ca963bc6dbecccd1b4b2e5c8e489726"
-
+  if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+    url "https://github.com/hackastak/repog/releases/download/v0.2.0/repog_0.2.0_linux_arm64.tar.gz"
+    sha256 "b3be28e6dcdfe2254f78d3d6fbdc56df279c6f99ba09813d5db125cfbf0de24e"
     define_method(:install) do
       bin.install "repog"
     end
